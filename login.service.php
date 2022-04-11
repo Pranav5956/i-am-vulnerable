@@ -39,14 +39,22 @@
     // Static authentication
     // username: "user"
     // password: "pass"
-    if ($_POST["username"] === "user" && $_POST["password"] === "pass") {
-        header("Location: dashboard.php");
-        $_SESSION['status'] = "success";
-        $_SESSION['message'] = "Login successful!";
-        $_SESSION['user'] = "user123";
-    } else {
+    if ($_POST["username"] !== "user") {
         header("Location: index.php");
         $_SESSION['status'] = "error";
-        $_SESSION['message'] = "Login failed!";
+        $_SESSION['message'] = "Incorrect Username!";
+        die();
     }
+
+    if ($_POST["password"] !== "pass") {
+        header("Location: index.php");
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Incorrect password!";
+        die();
+    }
+
+    header("Location: dashboard.php");
+    $_SESSION['status'] = "success";
+    $_SESSION['message'] = "Login successful!";
+    $_SESSION['user'] = "user123";
 ?>

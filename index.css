@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    color:white;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(4, 2, 32);
+}
+
+.container {
+    text-align: center;
+    height: 100vh;
+    flex: 1;
+}
+
+.container .banner {
+    padding: 3.125rem 1.625rem;
+}
+
+.container .banner .heading {
+    font-size: 2.65em;
+    font-weight: 1000;
+    margin-bottom: 1.625rem;
+    text-transform: uppercase;
+}
+
+.container .banner .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgb(208, 233, 255)
+}
+
+.container .panel {
+    background: white;
+    color: black;
+    margin: 1rem 2.625rem;
+    padding: 1.625rem;
+    border-radius: 25px;
+}
+
+.container .panel .panel-heading {
+    font-size: 2.125rem;
+    text-transform: uppercase;
+}
+
+.container .panel .panel-alert {
+    color: white;
+    margin: 1rem 1.125rem 0;
+    padding: 0.625rem;
+    border-radius: 10px;
+    font-size: 1.025rem;
+}
+
+.container .panel .panel-alert.panel-alert-error {
+    background-color: rgb(255, 114, 114);
+}
+
+.container .panel .panel-alert.panel-alert-success {
+    background-color: rgb(45, 193, 31);
+}
+
+.container .panel .panel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 1.125rem;
+    margin-top: 1rem;
+}
+
+.container .panel .panel-form .panel-form-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container .panel .panel-form .panel-form-control input[type="text"] {
+    padding-left: 50px;
+    height: 2.325rem;
+    width: 100%;
+    font-size: 1.075rem;
+}
+
+.container .panel .panel-form .panel-form-control input[type="text"]+.panel-form-icon {
+    position: absolute;
+    left: 18px;
+    font-size: 1.325rem;
+}
+
+.container .panel .panel-form .panel-form-button {
+    background-color: rgb(214, 236, 255);
+    border: none;
+    width: 50%;
+    margin: 0.75rem auto 0;
+    padding: 0.6rem 0;
+    font-size: 1.075rem;
+    border-radius: 2em;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 1rem;
+}
+
+.footer .social-links .social-link {
+    font-size: 2.125rem;
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }  
+
+    .container .banner {
+        text-align: left;
+        padding: 2rem;
+        padding-left: 7rem;
+        margin: auto 0;
+    }
+
+    .container .panel {
+        margin: auto 1.325rem;
+    }
+
+    .container .panel .panel-form .panel-form-button {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container .panel .panel-form .panel-form-button:hover,
+    .container .panel .panel-form .panel-form-button:focus {
+        background-color: rgb(165, 213, 255);
+        transform: scale(1.05);
+    }
+
+    .footer .social-links .social-link {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .footer .social-links .social-link:hover {
+        transform: scale(1.2);
+    }
+}

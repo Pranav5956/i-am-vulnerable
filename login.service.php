@@ -56,5 +56,5 @@
     header("Location: dashboard.php");
     $_SESSION['status'] = "success";
     $_SESSION['message'] = "Login successful!";
-    $_SESSION['user'] = "user123";
+    $_SESSION['user'] = $_POST["username"];
 ?>
